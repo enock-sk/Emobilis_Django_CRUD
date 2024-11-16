@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from course.models import Count, WhyUs,Feature
+from course.models import Count, WhyUs, Feature, Course,Team
 
 
 # Create your views here.
@@ -35,4 +35,6 @@ def index(request):
     counts = Count.objects.all()
     whyUs=WhyUs.objects.all()
     feature=Feature.objects.all()
-    return render(request,'index.html',{'whyUs':whyUs,'counts':counts,'feature':feature})
+    course=Course.objects.all()
+    team=Team.objects.all()
+    return render(request,'index.html',{'whyUs':whyUs,'counts':counts,'feature':feature,'course':course,'team':team})
