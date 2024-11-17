@@ -48,3 +48,11 @@ class Team(models.Model):
     linkedin_link=models.CharField(max_length=30)
     def __str__(self):
         return f'{self.heading}'
+
+class FooterLink(models.Model):
+    heading=models.TextField()
+    link1=models.TextField()
+    link2=models.TextField()
+    link3=models.TextField()
+    link4=models.TextField()
+    link5=models.TextField()

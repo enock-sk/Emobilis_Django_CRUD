@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from course.models import Count, WhyUs, Feature, Course,Team
+from course.models import Count, WhyUs, Feature, Course, Team, FooterLink
 
 
 # Create your views here.
@@ -37,4 +37,5 @@ def index(request):
     feature=Feature.objects.all()
     course=Course.objects.all()
     team=Team.objects.all()
-    return render(request,'index.html',{'whyUs':whyUs,'counts':counts,'feature':feature,'course':course,'team':team})
+    footerlink = FooterLink.objects.all()
+    return render(request,'index.html',{'footerlink':footerlink,'whyUs':whyUs,'counts':counts,'feature':feature,'course':course,'team':team})
