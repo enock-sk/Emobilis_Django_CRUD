@@ -11,7 +11,11 @@
           <div class="row d-flex justify-content-center text-center">
             <div class="col-lg-8">
               <h1>About Us<br></h1>
-              <p class="mb-0">Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
+              <p class="mb-0">a technology company dedicated to driving digital transformation across Africa. Founded in [Year], ENO AFRICA is committed to bringing innovative solutions that empower businesses, governments, and communities to thrive in the digital age.
+
+At ENO AFRICA, we understand the unique challenges and opportunities facing the African continent. Our mission is to leverage technology to solve real-world problems, enhance operational efficiency, and unlock new possibilities for growth. We believe that by making technology more accessible, we can create lasting impact and contribute to Africa’s economic development.
+
+Our diverse team of experts is passionate about designing and delivering scalable, sustainable solutions that cater to the evolving needs of businesses and organizations across various sectors. From startups to large enterprises, we work closely with our clients to ensure our products and services drive success, efficiency, and innovation.</p>
             </div>
           </div>
         </div>
@@ -33,22 +37,24 @@
 
         <div class="row gy-4">
 
-          <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
-            <img src="{% static 'assets/img/about-2.jpg' %}" class="img-fluid" alt="">
+          {% for about in about %}
+          	<div class="col-lg-6 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
+            <img src="/media/{{ about.image }}" class="img-fluid" alt="">
           </div>
 
           <div class="col-lg-6 order-2 order-lg-1 content" data-aos="fade-up" data-aos-delay="200">
-            <h3>Voluptatem dignissimos provident quasi corporis</h3>
+            <h3>{{ about.heading}}</h3>
             <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+                {{ about.description}}
             </p>
             <ul>
-              <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>{{ about.list1}}</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>{{ about.list2}}</span></li>
+              <li><i class="bi bi-check-circle"></i> <span>{{ about.list3}}</span></li>
             </ul>
           </div>
+          {% endfor %}
+
 
         </div>
 

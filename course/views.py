@@ -1,35 +1,40 @@
 from django.shortcuts import render
 
-from course.models import Count, WhyUs, Feature, Course, Team, FooterLink
+from course.models import Count, WhyUs, Feature, Course, Team, FooterLink, About
 
 
 # Create your views here.
-def index(request):
-    return render(request,'index.html')
-
 def contact(request):
     return render(request,'contact.html')
 
 def about(request):
-    return render(request,'about.html')
+    about = About.objects.all()
+    footerlink = FooterLink.objects.all()
+    return render(request, 'about.html', {'about': about, 'footerlink': footerlink})
 
 def courses(request):
-    return render(request,'courses.html')
+    footerlink = FooterLink.objects.all()
+    return render(request,'courses.html', {'footerlink': footerlink})
 
 def course_details(request):
-    return render(request,'course-details.html')
+    footerlink = FooterLink.objects.all()
+    return render(request,'course-details.html', {'footerlink': footerlink})
 
 def events(request):
-    return render(request,'events.html')
+    footerlink = FooterLink.objects.all()
+    return render(request,'events.html', {'footerlink': footerlink})
 
 def pricing(request):
-    return render(request,'pricing.html')
+    footerlink = FooterLink.objects.all()
+    return render(request,'pricing.html', {'footerlink': footerlink})
 
 def startpage(request):
-    return render(request,'starter-page.html')
+    footerlink = FooterLink.objects.all()
+    return render(request,'starter-page.html', {'footerlink': footerlink})
 
 def trainers(request):
-    return render(request,'trainers.html')
+    footerlink = FooterLink.objects.all()
+    return render(request,'trainers.html', {'footerlink': footerlink})
 
 def index(request):
     counts = Count.objects.all()

@@ -56,3 +56,14 @@ class FooterLink(models.Model):
     link3=models.TextField()
     link4=models.TextField()
     link5=models.TextField()
+    def __str__(self):
+        return f'{self.heading}'
+class About(models.Model):
+    image=models.ImageField(upload_to='images/')
+    heading=models.TextField()
+    description=models.TextField()
+    list1=models.TextField()
+    list2=models.TextField()
+    list3=models.TextField()
+    def __str__(self):
+        return f'{self.heading}'
